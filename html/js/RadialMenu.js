@@ -1,6 +1,6 @@
 'use strict';
 
-var DEFAULT_SIZE = 150;
+var DEFAULT_SIZE = 200;
 var MIN_SECTORS  = 3;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -14,12 +14,12 @@ function RadialMenu(params) {
     self.menuItems = params.menuItems ? params.menuItems : [{id: 'one', title: 'One'}, {id: 'two', title: 'Two'}];
 
     self.radius      = 55;
-    self.innerRadius = 18;
-    self.sectorSpace = 3.5;
+    self.innerRadius = self.radius * 0.32;
+    self.sectorSpace = self.radius * 0.035;
     self.sectorCount = Math.max(self.menuItems.length, MIN_SECTORS);
     self.closeOnClick = params.closeOnClick !== undefined ? !!params.closeOnClick : false;
 
-    self.scale       = 1;
+    self.scale       = 3;
     self.holder      = null;
     self.parentMenu  = [];
     self.parentItems = [];
